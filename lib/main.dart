@@ -16,10 +16,37 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      title: 'ListView widget',
+      title: 'Row widget',
       home: Scaffold(
-        body: MyGird()
-      ),
+        appBar: new AppBar(
+          title: new Text('水平方向布局'),
+        ),
+          body: MyRow()),
+    );
+  }
+}
+
+class MyRow extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        new RaisedButton(
+          onPressed: () {},
+          color: Colors.redAccent,
+          child: new Text('red button'),
+        ),
+        new RaisedButton(
+          onPressed: () {},
+          color: Colors.orangeAccent,
+          child: new Text('黄色按钮'),
+        ),
+        new RaisedButton(
+          onPressed: () {},
+          color: Colors.pinkAccent,
+          child: new Text('粉色按钮'),
+        )
+      ],
     );
   }
 }
@@ -33,18 +60,35 @@ class MyGird extends StatelessWidget {
           crossAxisCount: 3,
           mainAxisSpacing: 2.0,
           crossAxisSpacing: 2.0,
-          childAspectRatio: 0.7
-      ),
+          childAspectRatio: 0.7),
       children: <Widget>[
-        new Image.network('http://img5.mtime.cn/mt/2018/10/22/104316.77318635_180X260X4.jpg',fit: BoxFit.cover),
-        new Image.network('http://img5.mtime.cn/mt/2018/10/10/112514.30587089_180X260X4.jpg',fit: BoxFit.cover),
-        new Image.network('http://img5.mtime.cn/mt/2018/11/13/093605.61422332_180X260X4.jpg',fit: BoxFit.cover),
-        new Image.network('http://img5.mtime.cn/mt/2018/11/07/092515.55805319_180X260X4.jpg',fit: BoxFit.cover),
-        new Image.network('http://img5.mtime.cn/mt/2018/11/21/090246.16772408_135X190X4.jpg',fit: BoxFit.cover),
-        new Image.network('http://img5.mtime.cn/mt/2018/11/17/162028.94879602_135X190X4.jpg',fit: BoxFit.cover),
-        new Image.network('http://img5.mtime.cn/mt/2018/11/19/165350.52237320_135X190X4.jpg',fit: BoxFit.cover),
-        new Image.network('http://img5.mtime.cn/mt/2018/11/16/115256.24365160_180X260X4.jpg',fit: BoxFit.cover),
-        new Image.network('http://img5.mtime.cn/mt/2018/11/20/141608.71613590_135X190X4.jpg',fit: BoxFit.cover),
+        new Image.network(
+            'http://img5.mtime.cn/mt/2018/10/22/104316.77318635_180X260X4.jpg',
+            fit: BoxFit.cover),
+        new Image.network(
+            'http://img5.mtime.cn/mt/2018/10/10/112514.30587089_180X260X4.jpg',
+            fit: BoxFit.cover),
+        new Image.network(
+            'http://img5.mtime.cn/mt/2018/11/13/093605.61422332_180X260X4.jpg',
+            fit: BoxFit.cover),
+        new Image.network(
+            'http://img5.mtime.cn/mt/2018/11/07/092515.55805319_180X260X4.jpg',
+            fit: BoxFit.cover),
+        new Image.network(
+            'http://img5.mtime.cn/mt/2018/11/21/090246.16772408_135X190X4.jpg',
+            fit: BoxFit.cover),
+        new Image.network(
+            'http://img5.mtime.cn/mt/2018/11/17/162028.94879602_135X190X4.jpg',
+            fit: BoxFit.cover),
+        new Image.network(
+            'http://img5.mtime.cn/mt/2018/11/19/165350.52237320_135X190X4.jpg',
+            fit: BoxFit.cover),
+        new Image.network(
+            'http://img5.mtime.cn/mt/2018/11/16/115256.24365160_180X260X4.jpg',
+            fit: BoxFit.cover),
+        new Image.network(
+            'http://img5.mtime.cn/mt/2018/11/20/141608.71613590_135X190X4.jpg',
+            fit: BoxFit.cover),
       ],
     );
   }
