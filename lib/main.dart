@@ -7,30 +7,44 @@ import 'package:english_words/english_words.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget{
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context ){
     return MaterialApp(
-      title: 'Lzuliuyun',
-      home: Scaffold(
-        appBar: new AppBar(title: new Text('List View Widget')),
-        body: new ListView(
-          children: <Widget>[
-            new ListTile(
-              leading: new Icon(Icons.access_time),
-              title: new Text('access_time'),
-            ),
-            new ListTile(
-              leading: new Icon(Icons.account_balance),
-              title: new Text('account_balance'),
-            ),
-            new Image.network(
-                'http://jspang.com/static/upload/20181111/G-wj-ZQuocWlYOHM6MT2Hbh5.jpg'),
-            new Image.network(
-                'http://jspang.com/static/upload/20181109/1bHNoNGpZjyriCNcvqdKo3s6.jpg'),
-          ],
+      title:'Text widget',
+      home:Scaffold(
+        body:Center(
+          child:Container(
+              height:200.0,
+              child: MyList()
+          ),
         ),
       ),
+    );
+  }
+}
+
+class MyList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ListView(
+      scrollDirection: Axis.horizontal,
+      children: <Widget>[
+        new Container(
+          width:180.0,
+          color: Colors.lightBlue,
+        ), new Container(
+          width:180.0,
+          color: Colors.amber,
+        ), new Container(
+          width:180.0,
+          color: Colors.deepOrange,
+        ),new Container(
+          width:180.0,
+          color: Colors.deepPurpleAccent,
+        ),
+      ],
     );
   }
 }
