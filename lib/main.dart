@@ -5,49 +5,76 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-void main() => runApp(MyApp());
+void main () => runApp(MyApp(
+    items: new List<String>.generate(1000, (i)=> "Item $i")
+));
 
 class MyApp extends StatelessWidget{
+  final List<String> items;
+
+  MyApp({Key key, @required this.items}):super(key:key);
   @override
-  Widget build(BuildContext context ){
+  Widget build(BuildContext context) {
+    // TODO: implement build
     return MaterialApp(
-      title:'Text widget',
-      home:Scaffold(
-        body:Center(
-          child:Container(
-              height:200.0,
-              child: MyList()
-          ),
+      title: 'ListView widget',
+      home: Scaffold(
+        body: new ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return new ListTile(
+              title: new Text('${items[index]}'),
+            );
+          },
         ),
       ),
     );
   }
 }
 
-class MyList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return ListView(
-      scrollDirection: Axis.horizontal,
-      children: <Widget>[
-        new Container(
-          width:180.0,
-          color: Colors.lightBlue,
-        ), new Container(
-          width:180.0,
-          color: Colors.amber,
-        ), new Container(
-          width:180.0,
-          color: Colors.deepOrange,
-        ),new Container(
-          width:180.0,
-          color: Colors.deepPurpleAccent,
-        ),
-      ],
-    );
-  }
-}
+//void main() => runApp(MyApp());
+//
+//class MyApp extends StatelessWidget{
+//  @override
+//  Widget build(BuildContext context ){
+//    return MaterialApp(
+//      title:'Text widget',
+//      home:Scaffold(
+//        body:Center(
+//          child:Container(
+//              height:200.0,
+//              child: MyList()
+//          ),
+//        ),
+//      ),
+//    );
+//  }
+//}
+//
+//class MyList extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    // TODO: implement build
+//    return ListView(
+//      scrollDirection: Axis.horizontal,
+//      children: <Widget>[
+//        new Container(
+//          width:180.0,
+//          color: Colors.lightBlue,
+//        ), new Container(
+//          width:180.0,
+//          color: Colors.amber,
+//        ), new Container(
+//          width:180.0,
+//          color: Colors.deepOrange,
+//        ),new Container(
+//          width:180.0,
+//          color: Colors.deepPurpleAccent,
+//        ),
+//      ],
+//    );
+//  }
+//}
 
 //class MyApp extends StatelessWidget {
 //  @override
