@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Row widget',
       home: Scaffold(
-          appBar: new AppBar(
-            title: new Text('水平方向布局'),
-          ),
+        appBar: new AppBar(
+          title: new Text('水平方向布局'),
+        ),
           body: MyRow()),
     );
   }
@@ -31,26 +31,20 @@ class MyRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Expanded(
-          child: new RaisedButton(
-            onPressed: () {},
-            color: Colors.redAccent,
-            child: new Text('red button'),
-          ),
-        ),
-        Expanded(
-          child: new RaisedButton(
-            onPressed: () {},
-            color: Colors.orangeAccent,
-            child: new Text('黄色按钮'),
-          ),
-        ),
-        Expanded(
-          child: new RaisedButton(
-            onPressed: () {},
-            color: Colors.pinkAccent,
-            child: new Text('粉色按钮'),
-          ),
+        Expanded(child: new RaisedButton(
+          onPressed: () {},
+          color: Colors.redAccent,
+          child: new Text('red button'),
+        ),),
+        Expanded(child: new RaisedButton(
+          onPressed: () {},
+          color: Colors.orangeAccent,
+          child: new Text('黄色按钮'),
+        ),),
+        new RaisedButton(
+          onPressed: () {},
+          color: Colors.pinkAccent,
+          child: new Text('粉色按钮'),
         )
       ],
     );
